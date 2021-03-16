@@ -34,9 +34,35 @@ const Button = styled.button`
   margin: 0px 10px;
   }
   @media (max-width: 600px) {
+  display:none;
   height:200px;
   margin: 0px 20px;
   font-size: 20px;
+  margin: 0px 2px;
+  }
+`;
+const Buttonsmall = styled.button`
+  display:none;
+
+  cursor:pointer;
+  height:30px;
+  font-size: 20px;
+  margin: 30px 50px;
+  padding: auto;
+  border: 2px solid black;
+  border-radius: 3px;
+  &:hover {
+  color: grey; 
+  border: 2px solid grey;
+  }
+  &:active{
+  color:red;
+  border: 2px solid red;
+  }
+
+  @media (max-width: 600px) {
+  display:inline-block;
+  
   margin: 0px 2px;
   }
 `;
@@ -49,8 +75,8 @@ const Image=styled.img
   width:360px;
   }
   @media (max-width: 600px) {
-  height:200px;
-  width:300px;
+  height:220px;
+  width:330px;
   }
 `;
 
@@ -58,11 +84,18 @@ const Image=styled.img
 function Carousel(props) {
 
   return (
+    <div>
+
     <Ccarousel >
      <div><Button onClick={props.prev}>&#x2190;</Button></div>
      <div><Image src ={props.picsArray[props.index]} alt = "logo"/></div>
      <div> <Button onClick={props.next}>&#x2192;</Button></div>
     </Ccarousel>
+
+     <Buttonsmall onClick={props.prev}>&#x2190;</Buttonsmall>
+     <Buttonsmall onClick={props.next}>&#x2192;</Buttonsmall>
+
+    </div>
   );
 }
 export default Carousel;

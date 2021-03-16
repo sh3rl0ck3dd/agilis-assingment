@@ -77,7 +77,6 @@ class Layout extends Component {
         if (updatedindex < 0) {
             updatedindex = 2;
         }
-        console.log("prev=");
         this.setState({ showindex: updatedindex });
     }
 

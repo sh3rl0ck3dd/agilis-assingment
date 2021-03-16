@@ -60,6 +60,10 @@ const Input = styled.input `
   display:block;
   width:300px;
   height:40px;
+
+  @media (max-width: 600px) {
+    width:200px;
+  }
 `
 
 function Modal(props) {
@@ -75,7 +79,7 @@ function Modal(props) {
     function handlePassword(event) {
         setPassword(event.target.value);
     }
-    //function for sending credentials to the backend.
+    //function for sending credentials to the parent.
     function onTrigger() {
         props.handlesub(name, password);
     }
